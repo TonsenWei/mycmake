@@ -35,7 +35,7 @@
  * 
  * @Author: Wei Dongcheng
  * @Date: 2020-12-06 09:23:39
- * @LastEditTime: 2020-12-06 10:26:44
+ * @LastEditTime: 2020-12-06 11:07:37
  * @LastEditors: Wei Dongcheng
  * @Description: 
  */
@@ -59,6 +59,7 @@ int main(int argc, char **argv) {
     int val1 = 10;
     int val2 = 20;
     cout << "before swap: val1=" << val1 << ", val2=" << val2 << endl;
+    cout << "modify" << endl;
     swap(val1, val2);
     cout << "after swap: val1=" << val1 << ", val2=" << val2 << endl;
     return 0;

@@ -10,10 +10,12 @@
             "request": "launch",
             // "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",//待调试可执行文件
             // "program": "${workspaceFolder}\\multi_swap.exe",//待调试可执行文件
-            "program": "${workspaceFolder}\\build\\my_cmake_swap.exe",//使用cmake之后，根据cmake生成的exe路径修改，这里是build目录下
+            // "program": "${workspaceFolder}\\build\\my_cmake_swap.exe",//使用cmake之后，根据cmake生成的exe路径修改，这里是build目录下
+            "program": "${workspaceFolder}\\out.exe",//使用cmake之后，根据cmake生成的exe路径修改，这里是build目录下
             "args": [],
             "stopAtEntry": false,
-            "cwd": "D:\\Program Files\\mingw64\\bin",
+            // "cwd": "D:\\Program Files\\mingw64\\bin",
+            "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -26,7 +28,8 @@
                 }
             ],
             //调试之前要做的工作,也就是tasks.json文件的编译任务，当前是单个文件，多个文件改用cmake编译
-            // "preLaunchTask": "C/C++: g++.exe build active file"
+            //调试之前先编译链接，构建可执行文件
+            "preLaunchTask": "C/C++: g++.exe build active file"
         }
     ]
 }
