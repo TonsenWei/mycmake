@@ -35,7 +35,7 @@
  * 
  * @Author: Wei Dongcheng
  * @Date: 2020-12-06 09:23:39
- * @LastEditTime: 2020-12-06 11:07:37
+ * @LastEditTime: 2020-12-06 11:46:42
  * @LastEditors: Wei Dongcheng
  * @Description: 
  */
@@ -47,6 +47,8 @@
 using namespace std;
 
 /**
+ * 主要内容：
+ * 
  * 1. 如果用命令行编译，命令为：g++ -g .\main.cpp .\swap.cpp -o multi_swap
  * -g是生成调试信息.
  * 
@@ -54,12 +56,18 @@ using namespace std;
  *     创建CMakeLists.txt文件
  *     配置cmake
  *     make编译,在build下生成exe
+ * 
+ * 3. 使用tasks.json编译多文件
+ * 
+ * 4. 使用tasks.json执行cmake和make
+ *    如果要单步调试，CMakeLists.txt文件中需要添加
+ *    set(CMAKE_CXX_FLAGS "-g")设置增加调试信息
 */
 int main(int argc, char **argv) {
     int val1 = 10;
     int val2 = 20;
     cout << "before swap: val1=" << val1 << ", val2=" << val2 << endl;
-    cout << "modify" << endl;
+    cout << "set -g test" << endl;
     swap(val1, val2);
     cout << "after swap: val1=" << val1 << ", val2=" << val2 << endl;
     return 0;

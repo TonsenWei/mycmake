@@ -1,28 +1,38 @@
-{
-	"version": "2.0.0",
-	"tasks": [
-        {
-            // "type": "cppbuild", //使用这个会提示undefined reference to `swap(int&, int&)'
+{   
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/build" //进入build目录
+    },
+    "tasks": [
+        {   // cmake ..
             "type": "shell",
-            "label": "C/C++: g++.exe build active file",
-            "command": "D:\\Program Files\\mingw64\\bin\\g++.exe",
-            //默认生成的是单文件调试，改为多文件调试需要修改args参数
+            "label": "cmake",
+            // "command": "cmake",// 电脑上已安装微软MSVC编译器，会默认使用MSVC编译，
+            // 使用cmake -G "MinGW Makefiles" 代替cmake, 仅第一次时需要代替
+            "command": "cmake -G \"MinGW Makefiles\"",
             "args": [
-                "-g",
-                "main.cpp",
-                "swap.cpp",
-                "-o",
-                "${fileDirname}\\out.exe"
-            ],
-            "options": {
-                // "cwd": "D:\\Program Files\\mingw64\\bin"
-                "cwd": "${workspaceFolder}"
+                ".."
+            ]
+        },
+        {   // make
+            "label": "make",
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
-            "problemMatcher": [
-                "$gcc"
-            ],
-            "group": "build",
-            "detail": "compiler: \"D:\\Program Files\\mingw64\\bin\\g++.exe\""
+            "command": "mingw32-make",
+            "args": [
+
+            ]
+        },
+        {   //依次执行cmake .. 和make任务
+            "label": "Build",
+			"dependsOrder": "sequence", // 按列出的顺序执行任务依赖项
+            "dependsOn":[
+                "cmake",
+                "make"
+            ]
         }
     ]
+
 }
