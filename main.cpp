@@ -35,23 +35,26 @@
  * 
  * @Author: Wei Dongcheng
  * @Date: 2020-12-06 09:23:39
- * @LastEditTime: 2020-12-06 09:30:32
+ * @LastEditTime: 2020-12-06 10:26:44
  * @LastEditors: Wei Dongcheng
  * @Description: 
  */
 
 #include <iostream>
 
+#include "swap.h"
+
 using namespace std;
 
-
-void swap(int &a, int &b) {
-    int temp;
-    temp = a;
-    a = b;
-    b = temp;
-}
-
+/**
+ * 1. 如果用命令行编译，命令为：g++ -g .\main.cpp .\swap.cpp -o multi_swap
+ * -g是生成调试信息.
+ * 
+ * 2. 使用cmake：
+ *     创建CMakeLists.txt文件
+ *     配置cmake
+ *     make编译,在build下生成exe
+*/
 int main(int argc, char **argv) {
     int val1 = 10;
     int val2 = 20;

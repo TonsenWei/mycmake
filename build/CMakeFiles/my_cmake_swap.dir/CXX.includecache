@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Projects/CmakeProjects/mycmake/main.cpp
+iostream
+-
+swap.h
+D:/Projects/CmakeProjects/mycmake/swap.h
+
+D:/Projects/CmakeProjects/mycmake/swap.cpp
+swap.h
+D:/Projects/CmakeProjects/mycmake/swap.h
+
+D:/Projects/CmakeProjects/mycmake/swap.h
+
