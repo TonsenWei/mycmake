@@ -5,14 +5,16 @@ PROJECT(MYSWAP)
 set(CMAKE_CXX_FLAGS "-g")
 
 # 生成一个静态库，会生成一个libswap.a文件
-add_library(swap "${CMAKE_CURRENT_SOURCE_DIR}/src/src/swap.cpp")
+# add_library(swap "${CMAKE_CURRENT_SOURCE_DIR}/src/src/swap.cpp")
 # 生成一个共享库，会生成一个libswap_shared.dll文件
-add_library(swap_shared SHARED "${CMAKE_CURRENT_SOURCE_DIR}/src/src/swap.cpp")
+# add_library(swap_shared SHARED "${CMAKE_CURRENT_SOURCE_DIR}/src/src/swap.cpp")
 
 # 头文件目录
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/include")
-# 源文件目录
-AUX_SOURCE_DIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/src/src" DIR_SRCS)
+# 查找库的目录
+link_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/libs")
+# 源文件目录，使用了库，不再需要swap.cpp这个源文件
+# AUX_SOURCE_DIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/src/src" DIR_SRCS)
 
 # 生成可执行文件，这里没有写swap.cpp,是因为swap.cpp和swap.h编译成了链接库，
 # 后面再使用target_link_libraries把库链接到my_cmake_swap
@@ -22,4 +24,4 @@ add_executable(my_cmake_swap main.cpp)
 # 把可执行程序链接到共享库（动态链接库）
 # target_link_libraries(my_cmake_swap swap_shared)
 # 也可以使用下面的，把可执行程序链接到静态库
-target_link_libraries(my_cmake_swap swap)
+target_link_libraries(my_cmake_swap libswap_shared.dll)

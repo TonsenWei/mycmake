@@ -8,7 +8,7 @@
             "type": "shell",
             "label": "cmake",
             // "command": "cmake",// 电脑上已安装微软MSVC编译器，会默认使用MSVC编译，
-            // 使用cmake -G "MinGW Makefiles" 代替cmake, 仅第一次时需要代替
+            // 使用cmake -G "MinGW Makefiles" ..代替cmake .., 仅第一次时需要代替
             "command": "cmake -G \"MinGW Makefiles\"",
             "args": [
                 ".."
