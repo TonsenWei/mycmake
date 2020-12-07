@@ -24,4 +24,6 @@ add_executable(my_cmake_swap main.cpp)
 # 把可执行程序链接到共享库（动态链接库）
 # target_link_libraries(my_cmake_swap swap_shared)
 # 也可以使用下面的，把可执行程序链接到静态库
-target_link_libraries(my_cmake_swap libswap_shared.dll)
+# target_link_libraries(my_cmake_swap libswap_shared.dll)
+# 使用静态链接库，编译链接后，就包含在可执行文件中了，不需要再拷贝到与可执行文件相同目录下
+target_link_libraries(my_cmake_swap libswap.a)
