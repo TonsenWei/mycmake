@@ -12,7 +12,7 @@ set(CMAKE_CXX_FLAGS "-g")
 # 头文件目录
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/include")
 # 查找库的目录
-link_directories("${CMAKE_CURRENT_SOURCE_DIR}/src/libs")
+link_directories("${CMAKE_CURRENT_SOURCE_DIR}/libs")
 # 源文件目录，使用了库，不再需要swap.cpp这个源文件
 # AUX_SOURCE_DIRECTORY("${CMAKE_CURRENT_SOURCE_DIR}/src/src" DIR_SRCS)
 
